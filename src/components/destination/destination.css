@@ -1,0 +1,58 @@
+main {
+  background-image: url('../../assets/destination/bg-mobile.jpg');
+}
+
+@media (min-width: 581px) {
+  main {
+    background-image: url('../../assets/destination/bg-tablet.jpg');
+  }
+}
+
+@media (min-width: 1050px) {
+  main {
+    background-image: url('../../assets/destination/bg-desktop.jpg');
+  }
+}
+
+* {
+  color: white;
+}
+/* Planet   */
+
+.planet--info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planet--section {
+  width: 80%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Small Navigation */
+.planets--nav ul {
+  gap: 14px;
+  font-size: 14px;
+  display: flex;
+}
+
+/* Planet  */
+.planet-image {
+  width: 170px;
+}
+
+@media (min-width: 581px) {
+  .planet-image {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .planet-image {
+    width: 450px;
+  }
+}
