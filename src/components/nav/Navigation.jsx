@@ -3,8 +3,7 @@ import { FaBars } from 'react-icons/fa'
 import { VscChromeClose } from 'react-icons/vsc'
 import Logo from './Logo'
 import './nav.css'
-import { Link } from 'react-router-dom'
-import { useGlobalContext } from '../../context'
+import { NavLink } from 'react-router-dom'
 
 const navLinks = [
   {
@@ -34,8 +33,6 @@ const navLinks = [
 ]
 
 const Navigation = () => {
-  const { navActive, setNavActive } = useGlobalContext()
-
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
@@ -65,12 +62,12 @@ const Navigation = () => {
         {navLinks.map((link) => {
           const { id, url, num, text } = link
           return (
-            <li key={id} className={id === navActive ? 'active' : ''}>
-              <Link to={url}>
+            <NavLink to={url} key={id} className='navcontainer'>
+              <span className='navtext'>
                 <strong className='nav--number'>{num}</strong>
                 {text}
-              </Link>
-            </li>
+              </span>
+            </NavLink>
           )
         })}
       </ul>
@@ -78,4 +75,4 @@ const Navigation = () => {
   )
 }
 
-export { Navigation }
+export default Navigation
